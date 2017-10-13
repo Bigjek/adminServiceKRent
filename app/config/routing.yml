@@ -1,0 +1,19 @@
+# page_page:
+#     resource: "@PagePageBundle/Controller/"
+#     type: annotation
+#     prefix: /
+
+# content:
+#     resource: "@ContentBundle/Controller/"
+#     type:     annotation
+#     prefix: /
+
+app:
+    resource: "@PageBundle/Controller/"
+    type:     annotation
+    prefix: /
+
+content_admin:
+    resource: "@PageBundle/Controller/Admin/"
+    type:     annotation
+    prefix:   /admin
