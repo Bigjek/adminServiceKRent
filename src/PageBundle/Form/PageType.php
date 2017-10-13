@@ -2,7 +2,7 @@
 
 namespace PageBundle\Form;
 
-// use Ivory\CKEditorBundle\Form\Type\CKEditorType;
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
@@ -17,7 +17,12 @@ class PageType extends AbstractType
     {
         $builder
             ->add('title', null, array('label'=> 'Заголовок', 'required' => false))
-            ->add('content', null, array('label'=> 'Контент', 'required' => false))
+            ->add('content', CKEditorType::class, array(
+                'config' => array(
+                    'uiColor' => '#ffffff',
+                ),
+                'label'=> 'Контент',
+            ))
             ->add('link', null, array('label'=> 'Ссылка', 'required' => false))
             ->add('published', null, array('label'=>'Опубликованно?'))
 
