@@ -1,0 +1,26 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <main class="main">
+        <div class="article">
+            <aside class="article__logo logo logo_size">
+                <a class="logo__link" href="/"><img class="logo-i" src="{{ asset('img/svg/logo.svg') }}" alt=""></a>
+            </aside>
+            <article class="article__content">
+                <div class="block-info">
+
+                    {% set img = vich_uploader_asset(page, 'mainImageFile') %}
+                    <img class="block-info__img" src="{{ img | imagine_filter('main_img') }}" alt="{{ page.title }}">
+
+                    <h1 class="block-info__title">{{ page.title }}</h1>
+                    <div class="block-info__content">
+                        {{ page.content|raw }}
+                    </div>
+                </div>
+                <footer class="footer">
+                    <div class="footer__button"><a class="btn btn__link btn__link_top" href="form">Оставить заявку</a></div>
+                </footer>
+            </article>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends '::base.html.twig' %}
+{% block title_pg %}Команда{% endblock %}
+{% block body %}
+      <main class="main">
+        <div class="article">
+          <aside class="article__logo logo logo_size"><a class="logo__link" href="index.html"><img class="logo-i" src="{{ asset('img/svg/logo.svg') }}" alt=""></a>
+            <div class="article__left-content">
+              <p>Команда победителей. Сделаем пиздатейший ролик, инфа сотка, правда долго, дорого и не факт что вам вообще понравится, но нам то похуй, челедь ебаная.</p>
+              <p>Команда победителей. Сделаем пиздатейший ролик, инфа сотка, правда долго, дорого и не факт что вам вообще понравится, но нам то похуй, челедь ебаная.</p>
+            </div>
+          </aside>
+          <article class="article__content article__content_w">
+
+            {% for entity in page %}
+                <div class="block-img">
+                    {% set img = vich_uploader_asset(entity, 'mainImageFile') %}
+                    <img class="block-img__img" src="{{ img | imagine_filter('team_img') }}" alt="{{ entity.title }}">
+                    <h2 class="block-img__title title-h">{{ entity.title }}</h2>
+                    <div class="block-img__content">{{ entity.content|raw }}</div>
+                </div>
+            {% endfor %}
+            
+          </article>
+        </div>
+      </main>
+
+{% endblock %}

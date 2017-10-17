@@ -1,0 +1,14 @@
+vich_uploader:
+    db_driver: orm # or mongodb or propel or phpcr
+    mappings:
+        main_images:
+            uri_prefix:         /images/main
+            upload_destination: %kernel.root_dir%/../web/images/main
+            namer:              vich_uploader.namer_uniqid
+            delete_on_remove:   true
+
+        team_images:
+            uri_prefix:         /images/team
+            upload_destination: %kernel.root_dir%/../web/images/team
+            namer:              vich_uploader.namer_uniqid
+            delete_on_remove:   true

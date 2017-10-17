@@ -1,0 +1,3 @@
+{% for entity in entities %}
+    <li class="menu-main__item"><a class="menu-main__link" href="{{ path('homepage') }}article/{{ entity.link }}">{{ entity.title }}</a></li>
+{% endfor %}

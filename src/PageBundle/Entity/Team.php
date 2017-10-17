@@ -9,14 +9,14 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
- * Class Page
+ * Class Team
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="PageBundle\Entity\Repository\PageRepository")
+ * @ORM\Entity(repositoryClass="PageBundle\Entity\Repository\TeamRepository")
  * @Vich\Uploadable
  */
 
-class Page extends AbstractContent{
+class Team extends AbstractContent{
 
     /**
      * @var integer
@@ -26,25 +26,16 @@ class Page extends AbstractContent{
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="slug", type="string", length=255)
-     * @Gedmo\Slug(fields={"title"}, updatable=false)
-     */
-     private $link;
-
     
     /**
      * @var string
-     * @ORM\Column(name="main_image", type="string")
+     * @ORM\Column(name="team_image", type="string")
      */
      private $mainImage;
 
      /**
       * @var File
-      * @Vich\UploadableField(mapping="main_images", fileNameProperty="mainImage")
+      * @Vich\UploadableField(mapping="team_images", fileNameProperty="mainImage")
       */
      private $mainImageFile;
 
@@ -82,30 +73,6 @@ class Page extends AbstractContent{
     {
         return $this->title;
     }
-
-    /**
-     * Set link
-     *
-     * @param string $link
-     * @return Page
-     */
-     public function setLink($link)
-     {
-         $this->link = $link;
- 
-         return $this;
-     }
- 
-     /**
-      * Get link
-      *
-      * @return string 
-      */
-     public function getLink()
-     {
-         return $this->link;
-     }
-
 
     /**
      * Set published

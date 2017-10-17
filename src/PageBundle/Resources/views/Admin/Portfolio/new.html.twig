@@ -1,0 +1,26 @@
+{% extends '::admin.html.twig' %}
+{% block page_title %}
+    Портфолио
+{% endblock %}
+{% block page_subtitle %}
+    создание
+{% endblock %}
+{% block page_content -%}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-danger">
+                {{ form_start(form) }}
+                <div class="box-body">
+                    {{ form_widget(form) }}
+                </div>
+                <div class="box-header with-border">
+                    <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Создать</button>
+                    <a  class="btn btn-danger" href="#">
+                        <i class="fa fa-ban"></i> Вернутсься к списку
+                    </a>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
