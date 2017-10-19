@@ -1,0 +1,13 @@
+ivory_ck_editor:
+    default_config: base
+    configs:
+        base:
+            # toolbar: basic
+            toolbar: full
+            allowedContent: true
+            forcePasteAsPlainText: true
+            language: ru
+        page:
+            allowedContent: true
+            forcePasteAsPlainText: true
+            language: ru

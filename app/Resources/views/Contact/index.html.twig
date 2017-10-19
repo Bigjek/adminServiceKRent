@@ -1,0 +1,61 @@
+{% extends '::base.html.twig' %}
+
+{% block title_pg %}Контакты{% endblock %}
+{% block body %}     
+    <main class="main main-footer">
+      <div class="contacts">
+        <aside class="contacts__logo logo logo_size"><a class="logo__link" href="index.html"><img class="logo-i" src="{{ asset('img/svg/logo.svg') }}" alt=""></a></aside>
+        <article class="contacts__content">
+          <div class="contact-text">
+          {% for entity in page %}
+            {{ entity.content|raw }}
+          {% endfor %}
+          </div>
+          <div class="contact">
+            <ul class="contact__list">
+              <li class="contact__item">
+                <div class="contact__icon">
+                  <svg class="icon-white" width="32" height="32">
+                    <use xlink:href="{{ asset('img/sprite.svg#call') }}"> </use>
+                  </svg>
+                </div>
+                <div class="contact__block"><a class="contact__link contact__link_s" href="tel:+78126434215" type="tel">+7 (812) 643–42–15</a></div>
+              </li>
+              <li class="contact__item">
+                <div class="contact__icon">
+                  <svg class="icon-white" width="32" height="32">
+                    <use xlink:href="{{ asset('img/sprite.svg#mail') }}"> </use>
+                  </svg>
+                </div>
+                <div class="contact__block"> <a class="contact__link contact__link_s" href="mailto:prod@kino.rent" type="email">prod@kino.rent</a></div>
+              </li>
+              <li class="contact__item">
+                <div class="contact__icon">
+                  <svg class="icon-white" width="32" height="32">
+                    <use xlink:href="{{ asset('img/sprite.svg#telegram') }}"> </use>
+                  </svg>
+                </div>
+                <div class="contact__block">
+                  <div class="contact__link contact__link_s">@kino.rentprod</div>
+                </div>
+              </li>
+              <li class="contact__item">
+                <div class="contact__icon">
+                  <svg class="icon-white" width="32" height="32">
+                    <use xlink:href="{{ asset('img/sprite.svg#maps') }}"> </use>
+                  </svg>
+                </div>
+                <div class="contact__block">
+                  <div class="contact__link">Санкт-Петербург, м.Петроградская, Каменноостровский пр. 26–28</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <footer class="footer">
+        <div class="footer__button"><button class="btn btn__link btn__link_top btn-order">Оставить заявку</button></div>
+      </footer>
+    </main>
+    
+{% endblock %}

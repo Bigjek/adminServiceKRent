@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Production</title>
+<style>
+body, p {
+    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust:none;
+}
+a:hover {
+    text-decoration: underline !important;
+}
+td.contentblock p {
+    color:#1a1a1a;
+    font-size: 14px;
+    line-height: 1.3;
+    margin-top:0;
+    margin-bottom:12px;
+    padding-top:0;
+    padding-bottom:0;
+    font-weight:normal;
+}
+td.contentblock p a {
+    color:#3ca7dd;
+    text-decoration:none;
+}
+tr.buttomblock td{
+    text-align: center;
+}
+tr.buttomblock a{
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 auto;
+    width: 140px;
+    height: 30px;
+    background: #d73925;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 2;
+}
+.buttonBlocks{
+    padding:0 5px;
+}
+img {
+    display: block;
+}
+/* Mobile stylesheet for iPhone and Android */
+@media only screen and (max-width: 480px) {
+ table {
+ position: relative;
+ width: 100%;
+}
+.adressblock .bgpng0, .buttonBlocks{
+    display: none;
+}
+</style>
+</head>
+<body style="margin: 0; padding: 0; font-size: 14px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f0f8ff">
+  <tr>
+    <td bgcolor="#f0f8ff" width="100%">
+        <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="table">
+            <tr>
+              <td width="600">
+                <table width="100%" cellpadding="25" cellspacing="0" border="0">
+                    <tr>
+                        <td bgcolor="#ffffff" class="contentblock">
+                            <h2 xmlns="http://www.w3.org/1999/html">{% if entity.list|length > 0 %} {{ entity.list }} {% endif %}</h2>
+                            <p>Клиент: {{ entity.name }}</p>
+                            <p>Email: {{ entity.email }}</p>
+                            <p>Номер телефона: {{ entity.tel }}</p>
+                            <p>Комментарии: {{ entity.msg }}</p>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

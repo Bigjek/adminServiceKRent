@@ -1,0 +1,27 @@
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+
+page:
+    resource: "@PageBundle/Controller/"
+    type:     annotation
+    prefix: /
+
+content_admin:
+    resource: "@PageBundle/Controller/Admin/"
+    type:     annotation
+    prefix:   /admin
+
+# index_admin:
+#     resource: "@PageBundle/Controller/Admin/"
+#     type:     annotation
+#     prefix:   /admin
+
+# pages:
+#     resource: "@PageBundle/Controller/PageController.php"
+#     type:     annotation
+#     prefix:   /
+
+# teams:
+#     resource: "@PageBundle/Controller/TeamController.php"
+#     type:     annotation
+#     prefix:   /team

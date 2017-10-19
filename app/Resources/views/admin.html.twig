@@ -1,0 +1,33 @@
+{% extends 'AvanzuAdminThemeBundle:layout:base-layout.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    {# <link rel="stylesheet" href="{{ asset('css/admin.css') }}" /> #}
+    {# <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" rel="stylesheet" />
+    <link href="{{ asset('vendor/lightbox/dist/ekko-lightbox.min.css') }}" rel="stylesheet" /> #}
+{% endblock %}
+{% block avanzu_logo %}
+    <a href="{{ path('homepage') }}" class="logo" target="_blank">
+        <!-- Add the class icon to your logo image or logo icon to add the margining -->
+        {% trans %}Вернуться на сайт{% endtrans %}
+    </a>
+{% endblock %}
+{% block avanzu_sidebar %}
+    {# {% if app.user is not null and is_granted('IS_AUTHENTICATED_FULLY') %}
+        {{ render(controller('AvanzuAdminThemeBundle:Sidebar:userPanel')) }}
+    {% endif %} #}
+    {{ render(controller('AvanzuAdminThemeBundle:Sidebar:menu', {'request':app.request})) }}
+{% endblock %}
+
+{% set admin_skin = 'skin-red fixed' %}
+{% block page_content %}
+    <div class="container-fluid">
+        {% block content %}
+        {% endblock %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {# <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
+    <script src="{{ asset('vendor/lightbox/dist/ekko-lightbox.min.js') }}"></script>
+    <script src="{{ asset('js/admin.js') }}"></script> #}
+{% endblock %}
