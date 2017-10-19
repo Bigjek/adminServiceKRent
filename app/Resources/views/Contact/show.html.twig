@@ -1,25 +1,6 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-    <div class="header">
-        <div class="hamburger hamburger--elastic" tabindex="0" aria-label="Menu" role="button" aria-controls="navigation">
-            <div class="hamburger-box">
-                <div class="hamburger-inner"></div>
-            </div>
-        </div>
-        <nav class="nav" id="navigation">
-            <ul class="menu-main">
-                <li class="menu-main__item"><a class="menu-main__link" href="index.html">Showreel</a></li>
-                <li class="menu-main__item"><a class="menu-main__link" href="portfolio.html">Портфолио</a></li>
-                
-                {{ render(controller('PageBundle:Page:getPageList')) }}
-
-                <li class="menu-main__item"><a class="menu-main__link" href="team.html">Команда</a></li>
-                <li class="menu-main__item"><a class="menu-main__link" href="contacts.html">Связаться с нами</a></li>
-            </ul>
-        </nav>
-        <div class="menu-close-block" id="menu-close-block"></div>
-    </div>
     <main class="main">
         <div class="article">
             <aside class="article__logo logo logo_size">
@@ -37,7 +18,7 @@
                     </div>
                 </div>
                 <footer class="footer">
-                    <div class="footer__button"><a class="btn btn__link btn__link_top" href="form">Оставить заявку</a></div>
+                    <div class="footer__button"><button class="btn btn__link btn__link_top btn-order">Оставить заявку</button></div>
                 </footer>
             </article>
         </div>

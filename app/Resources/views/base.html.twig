@@ -2,14 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Главная</title>
+    <title>Production</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     {% block stylesheets %}
-        {# <link href='http://fonts.googleapis.com/css?family=Irish+Grover' rel='stylesheet' type='text/css'> #}
-        {# <link href='http://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'> #}
         <link href="{{ asset('styles/main.min.css') }}" type="text/css" rel="stylesheet" />
     {% endblock %}
     <!--[if lt IE 9]>
@@ -47,11 +45,66 @@
             <div class="menu-close-block" id="menu-close-block"></div>
         </div>
         {% block body %}{% endblock %}
+        <div class="modal modal-order">
+            <div class="contacts">
+                <aside class="contacts__logo logo logo_size"><a class="logo__link" href="index.html"><img class="logo-i" src="{{ asset('img/svg/logo.svg') }}" alt=""></a></aside>
+                <article class="contacts__content">
+                    <form class="form-sub" id="myOrder" action="{{ path('shooting_order') }}" method="post">
+                    <input class="form-contact__name form-contact__list_b" type="hidden" name="list" id="list" value="- Заявка - {% block title_input_form %}{% endblock %}">
+                    <div class="input-group input-group__block">
+                        <label class="visually-hidden" for="name"></label>
+                        <input class="form-contact__name form-contact__name_b" type="text" name="name" placeholder="ФИО" id="name" required>
+                    </div>
+                    <div class="input-group input-group__block">
+                        <label class="visually-hidden" for="email"></label>
+                        <input class="form-contact__email form-contact__email_b" type="email" name="email" placeholder="Email" id="email" required>
+                    </div>
+                    <div class="input-group input-group__block">
+                        <label class="visually-hidden" for="tel"></label>
+                        <input class="form-contact__tel form-contact__tel_b" type="tel" name="tel" placeholder="+7(___)___-__-__" id="tel" required>
+                    </div>
+                    <div class="input-group input-group__block">
+                        <label class="visually-hidden" for="description"></label>
+                        <textarea class="form-contact__text form-contact__text_b" name="msg" cols="30" rows="5" placeholder="Опишите Вашу задачу..." id="description" required></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label class="file-upload"><span class="button">Выбрать</span>
+                        <mark>Если у Вас есть ТЗ, прикрепите его</mark>
+                        <input type="file" name="pack" id="pack">
+                        </label>
+                    </div>
+                    <div class="form-contact__btn">
+                        <button class="form-contact__sub btn" type="submit">Оставить заявку</button>
+                        <button class="form-contact__back" type="button">Назад</button>
+                    </div>
+                    </form>
+                </article>
+            </div>
+        </div>
+        <div class="modal modal-success">
+            <div class="modal__cont-s">
+            <div>Ваша заявка успешно отправлена.</div><a class="btn btn__link" href="/"><span class="btn__title">Ok</span></a>
+            </div>
+        </div>
+        <div class="modal modal-error">
+            <div class="modal__cont-s">
+            <div>Что-то пошло не так, попробуйте заполнить форму заново.</div><a class="btn btn__link" href="/{% block title_link_form %}{% endblock %}"><span class="btn__title">Ok</span></a>
+            </div>
+        </div>
+        <div class="modal modal-time">
+            <div class="modal__cont-s">
+            <div>Подождите...</div>
+            <div class="bubblingG"><span id="bubblingG_1"></span><span id="bubblingG_2"></span><span id="bubblingG_3"></span></div>
+            </div>
+        </div>
+
     </div>
+    
   </body>
   {% block javascripts %}
     <script src="{{ asset('scripts/main.js') }}" defer></script>
   {% endblock %}
+
 </html>
 
 {# 

@@ -2,7 +2,7 @@
 
 {% block title_pg %}Контакты{% endblock %}
 {% block body %}     
-    <main class="main">
+    <main class="main main-footer">
       <div class="contacts">
         <aside class="contacts__logo logo logo_size"><a class="logo__link" href="index.html"><img class="logo-i" src="{{ asset('img/svg/logo.svg') }}" alt=""></a></aside>
         <article class="contacts__content">
@@ -53,8 +53,9 @@
           </div>
         </article>
       </div>
+      <footer class="footer">
+        <div class="footer__button"><button class="btn btn__link btn__link_top btn-order">Оставить заявку</button></div>
+      </footer>
     </main>
-    <footer class="footer">
-      <div class="footer__button"><a class="btn btn__link btn__link_top" href="form.html">Оставить заявку</a></div>
-    </footer>
+    
 {% endblock %}

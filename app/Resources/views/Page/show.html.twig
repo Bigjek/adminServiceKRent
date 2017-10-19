@@ -1,5 +1,6 @@
 {% extends '::base.html.twig' %}
-
+{% block title_input_form %}{{ page.title }}{% endblock %}
+{% block title_link_form %}article/{{ page.link }}{% endblock %}
 {% block body %}
     <main class="main">
         <div class="article">
@@ -18,7 +19,7 @@
                     </div>
                 </div>
                 <footer class="footer">
-                    <div class="footer__button"><a class="btn btn__link btn__link_top" href="form">Оставить заявку</a></div>
+                    <div class="footer__button"><button class="btn btn__link btn__link_top btn-order">Оставить заявку</button></div>
                 </footer>
             </article>
         </div>
