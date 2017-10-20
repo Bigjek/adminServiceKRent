@@ -3,18 +3,21 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: bundles/ckeditor.yml }
+    - { resource: bundles/fos_user.yml }
     - { resource: bundles/stof.yml }
     - { resource: bundles/vich.yml }
     - { resource: bundles/liip.yml }
+    - { resource: "@UserBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: ru
+    app_locales: en|ru
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -38,6 +41,14 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+
+# assetic:
+#     debug:          "%kernel.debug%"
+#     use_controller: false
+#     bundles:        [ ]
+#     #java: /usr/bin/java
+#     filters:
+#         cssrewrite: ~
 
 # Doctrine Configuration
 doctrine:
@@ -68,6 +79,6 @@ swiftmailer:
     host:      "%mailer_host%"
     username:  "%mailer_user%"
     password:  "%mailer_password%"
-    port:      "%mailer_port%"
+    port:      465
     encryption: ssl
     spool:     { type: memory }
