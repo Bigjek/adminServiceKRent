@@ -33,21 +33,14 @@ class Page extends AbstractContent{
      * @ORM\Column(name="slug", type="string", length=255)
      * @Gedmo\Slug(fields={"title"}, updatable=false)
      */
-     private $link;
+    private $link;
 
-    
     /**
      * @var string
-     * @ORM\Column(name="main_image", type="string")
+     *
+     * @ORM\Column(name="slugNew", type="string", length=255)
      */
-     private $mainImage;
-
-     /**
-      * @var File
-      * @Vich\UploadableField(mapping="main_images", fileNameProperty="mainImage")
-      */
-     private $mainImageFile;
-
+     private $linkNew;
 
     /**
      * Get id
@@ -89,21 +82,44 @@ class Page extends AbstractContent{
      * @param string $link
      * @return Page
      */
-     public function setLink($link)
+    public function setLink($link)
+    {
+        $this->link = $link;
+
+        return $this;
+    }
+
+    /**
+     * Get link
+     *
+     * @return string 
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+
+    /**
+     * Set link
+     *
+     * @param string $linkNew
+     * @return Page
+     */
+     public function setLinkNew($linkNew)
      {
-         $this->link = $link;
+         $this->linkNew = $linkNew;
  
          return $this;
      }
  
      /**
-      * Get link
+      * Get linkNew
       *
       * @return string 
       */
-     public function getLink()
+     public function getLinkNew()
      {
-         return $this->link;
+         return $this->linkNew;
      }
 
 
@@ -130,45 +146,4 @@ class Page extends AbstractContent{
          return $this->published;
      }
 
-
-      /**
-     * @param $mainImage
-     */
-    public function setMainImage($mainImage)
-    {
-        $this->mainImage = $mainImage;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getMainImage()
-    {
-        return $this->mainImage;
-    }
-
-    /**
-     * @param File $mainImageFile
-     */
-    public function setMainImageFile(File $mainImageFile)
-    {
-        $this->mainImageFile = $mainImageFile;
-
-        if ($mainImageFile) {
-            // It is required that at least one field changes if you are using doctrine
-            // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new \DateTime('now');
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return File
-     */
-    public function getMainImageFile()
-    {
-        return $this->mainImageFile;
-    }
 }

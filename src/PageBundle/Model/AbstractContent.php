@@ -23,7 +23,7 @@ class AbstractContent
 
     /**
      * @var string
-     * @ORM\Column(name="content", type="text")
+     * @ORM\Column(name="content", type="text", nullable=true)
      *
      */
     protected $content;
@@ -39,6 +39,22 @@ class AbstractContent
      * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      */
     protected $updatedAt;
+
+            /**
+     * @var string
+     * @ORM\Column(name="meta_title", type="string", nullable=true)
+     */
+    protected $metaTitle;
+    /**
+     * @var string
+     * @ORM\Column(name="meta_description", type="string", nullable=true)
+     */
+    protected $metaDescription;
+    /**
+     * @var string
+     * @ORM\Column(name="meta_keywords", type="string", nullable=true)
+     */
+    protected $metaKeywords;
 
 
     /**
@@ -143,6 +159,60 @@ class AbstractContent
     public function isPublished()
     {
         return $this->published;
+    }
+
+     /**
+     * @param $metaTitle
+     * @return AbstractContent
+     */
+    public function setMetaTitle($metaTitle)
+    {
+        $this->metaTitle = $metaTitle;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaTitle()
+    {
+        return $this->metaTitle;
+    }
+
+    /**
+     * @param $metaDescription
+     * @return AbstractContent
+     */
+    public function setMetaDescription($metaDescription)
+    {
+        $this->metaDescription = $metaDescription;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaDescription()
+    {
+        return $this->metaDescription;
+    }
+
+    /**
+     * @param $metaKeywords
+     * @return AbstractContent
+     */
+    public function setMetaKeywords($metaKeywords)
+    {
+        $this->metaKeywords = $metaKeywords;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaKeywords()
+    {
+        return $this->metaKeywords;
     }
 
     /**

@@ -28,7 +28,7 @@
                         {% for entity in entities %}
                             <tr>
                                 <td><a href="{{ path('admin_page_edit', { 'id': entity.id }) }}">{{ entity.title }}</a></td>
-                                <td>{{ entity.link }}</td>
+                                <td>{{ entity.linkNew }}</td>
                                 <td>{% if entity.published %}да{% else %}нет{% endif %}</td>
 
 

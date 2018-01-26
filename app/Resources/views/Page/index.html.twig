@@ -1,11 +1,55 @@
 {% extends '::base.html.twig' %}
+{%- block page_title -%}
+  {%- if page.metaTitle -%}
+      {{ page.title }} | {{ page.metaTitle -}} 
+  {%- endif -%}
+{%- endblock -%}
 
+{%- block metaDesription -%}
+  {%- if page.metaDescription -%}
+      {{-page.metaDescription-}}
+  {%- endif -%}
+{%- endblock -%}
+
+{%- block metaKeywords -%}
+  {%- if page.metaKeywords -%}
+      {{-page.metaKeywords-}}
+  {%- endif -%}
+{%- endblock -%}
 {% block body %}
-    <main class="main main_i">
-        <div class="logo"><a class="logo__link logo__link_pos" href="/"><img class="logo-i" src="{{ asset('img/svg/logo.svg') }}" alt=""></a>
-          <div class="logo__button">
-            <button class="btn btn__link btn-order btn-order"><span class="btn__title">Оставить заявку </span></button>
+
+<section class="main-i"> 
+        <div class="main-i__left main-i__left_img-bg">
+          <div class="main-i__left-block">
+            <div class="text-block">
+              <h1>{{page.title}}</h1><br>
+              {{ page.content|raw }}
+            </div>
+            <div class="contact-block">
+              <ul class="text-conts">
+                <li class="text-conts__list"><a class="text-conts__item" href="tel:+78123171706" type="tel">
+                    <svg class="icon-white" width="20" height="20">
+                      <use xlink:href="{{asset('img/sprite.svg') }}#call"> </use>
+                    </svg><span>+7 (812) 317–17–06</span></a></li>
+                <li class="text-conts__list"><a class="text-conts__item" href="mailto:service@kino.rent" type="email">
+                    <svg class="icon-white" width="20" height="20">
+                      <use xlink:href="{{asset('img/sprite.svg') }}#mail"> </use>
+                    </svg><span>service@kino.rent</span></a></li>
+                <li class="text-conts__list"><a class="text-conts__item" href="javascript:void(0);">
+                    <svg class="icon-white" width="20" height="20">
+                      <use xlink:href="{{asset('img/sprite.svg') }}#addres"> </use>
+                    </svg><span>Каменноостровский пр., 26-28</span></a></li>
+                <li class="text-conts__list"><a class="text-conts__item" href="javascript:void(0);">
+                    <svg class="icon-white" width="20" height="20">
+                      <use xlink:href="{{asset('img/sprite.svg') }}#time"> </use>
+                    </svg><span>Ежедневно с 10:00 до 22:00</span></a></li>
+              </ul>
+            </div>
           </div>
         </div>
-    </main>
+        <div class="main-i__right">
+          <div class="main-i__right-block main-i__right-block_img-bg"></div>
+        </div>
+      </section>
+
 {% endblock %}

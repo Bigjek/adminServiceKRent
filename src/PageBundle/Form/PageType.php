@@ -18,20 +18,18 @@ class PageType extends AbstractType
     {
         $builder
             ->add('title', null, array('label'=> 'Заголовок', 'required' => false))
+            ->add('linkNew', null, array('label'=> 'Ссылка URL', 'required' => false))
             ->add('content', CKEditorType::class, array(
                 'config' => array(
                     'uiColor' => '#ffffff',
                 ),
                 'label'=> 'Контент',
-            ))
-            // ->add('mainImageFile', 'vich_image', array('label'=>'Изображение', 'required'=>false))
-            ->add('mainImageFile', VichFileType::class, [
                 'required' => false,
-                'allow_delete' => true, 
-                'download_uri' => '...',
-                'download_label' => '...',
-            ])
-            ->add('link', null, array('label'=> 'Ссылка', 'required' => false))
+            ))
+            ->add('metaTitle', null, array('label'=> 'SEO - Заголовок', 'required' => false))
+            ->add('metaDescription', null, array('label'=> 'SEO - Описание', 'required' => false))
+            ->add('metaKeywords', null, array('label'=> 'SEO - Ключевые слова', 'required' => false))
+            ->add('link', null, array('label'=> 'Автоматическая ссылка', 'required' => false))
             ->add('published', null, array('label'=>'Опубликованно?'))
 
         ;

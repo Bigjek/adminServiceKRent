@@ -32,3 +32,8 @@ content_admin:
     resource: "@PageBundle/Controller/Admin/"
     type:     annotation
     prefix:   /admin
+
+pages:
+    resource: "@PageBundle/Controller/PageController.php"
+    type:     annotation
+    prefix:   /
