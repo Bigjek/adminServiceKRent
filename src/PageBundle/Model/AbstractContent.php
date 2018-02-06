@@ -40,11 +40,6 @@ class AbstractContent
      */
     protected $updatedAt;
 
-            /**
-     * @var string
-     * @ORM\Column(name="meta_title", type="string", nullable=true)
-     */
-    protected $metaTitle;
     /**
      * @var string
      * @ORM\Column(name="meta_description", type="string", nullable=true)
@@ -159,24 +154,6 @@ class AbstractContent
     public function isPublished()
     {
         return $this->published;
-    }
-
-     /**
-     * @param $metaTitle
-     * @return AbstractContent
-     */
-    public function setMetaTitle($metaTitle)
-    {
-        $this->metaTitle = $metaTitle;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getMetaTitle()
-    {
-        return $this->metaTitle;
     }
 
     /**

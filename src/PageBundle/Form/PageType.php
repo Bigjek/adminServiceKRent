@@ -26,7 +26,6 @@ class PageType extends AbstractType
                 'label'=> 'Контент',
                 'required' => false,
             ))
-            ->add('metaTitle', null, array('label'=> 'SEO - Заголовок', 'required' => false))
             ->add('metaDescription', null, array('label'=> 'SEO - Описание', 'required' => false))
             ->add('metaKeywords', null, array('label'=> 'SEO - Ключевые слова', 'required' => false))
             ->add('link', null, array('label'=> 'Автоматическая ссылка', 'required' => false))
